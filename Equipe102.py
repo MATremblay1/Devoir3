@@ -81,3 +81,4 @@ plt.ylabel("y")
 plt.title("Figure 3:\n Régression non-linéaire de f(x) par Newton modifié")
 plt.legend()
 plt.show()
+#Test 
