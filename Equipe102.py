@@ -7,7 +7,7 @@ from newton import newton
 
 
 #a
-# But: On cherche à représenter graphiquement les points du ficier points.txt
+# But: On cherche à représenter graphiquement les points du fichier points.txt
 # afin de visualiser la tendance générale des données à l'aide du nuage de points. 
 # On commence par créer la matrice X à partir du fichier points.txt
 X = np.loadtxt("points.txt")
