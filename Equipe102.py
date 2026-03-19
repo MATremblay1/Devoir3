@@ -113,10 +113,3 @@ plt.ylabel("y")
 plt.title("Figure 4:\n Approches A et B de la régression de Fourier")
 plt.legend()
 plt.show()
-<<<<<<< HEAD
-=======
-#Test 
-#Je refais une tentative de commit, faudrait que ça commit
-# TESTY TEST TEST TEST TEST
-# TESTY TEST 2 ELECTRIC BOOGALOO
->>>>>>> cdb35c6ea1250d5b60c62109dc870a5f7fbddddf
