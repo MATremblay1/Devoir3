@@ -30,8 +30,8 @@ plt.show()
 betaA = reglinA(X)
 betaB = reglinB(X)
 
-print("Beta approche A =", betaA)
-print("Beta approche B =", betaB)
+print("Beta approche reglinA =", betaA)
+print("Beta approche reglinB =", betaB)
 
 xx = np.linspace(1, 6)
 
@@ -44,7 +44,7 @@ plt.plot(xx, yA, label="Régression A", color="red", linewidth=3)
 plt.plot(xx, yB, label="Régression B", color="lime", linewidth=1)
 plt.xlabel("x")
 plt.ylabel("y")
-plt.title("Figure 2:\n Régression linéaire par moindres carrés (approches A et B)")
+plt.title("Figure 2:\n Régression linéaire par les approches A et B")
 plt.legend()
 plt.show()
 
@@ -69,6 +69,7 @@ beta0 = np.array([[1.0], [1.0], [1.0]])
 beta_newton = newton(beta0, F, J, tol=1e-7, nmax=20)
 print("\nBeta Newton =")
 print(beta_newton)
+print()
 
 xx = np.linspace(1, 6)
 yy = beta_newton[0] + beta_newton[1]*np.sqrt(xx - beta_newton[2])
@@ -78,9 +79,37 @@ plt.scatter(x, y, s=3, label="Données")
 plt.plot(xx, yy, label="Régression non-linéaire", color='orange', linewidth=2)
 plt.xlabel("x")
 plt.ylabel("y")
-plt.title("Figure 3:\n Régression non-linéaire de f(x) par Newton modifié")
+plt.title("Figure 3:\n Régression non-linéaire par la méthode de Newton modifiée")
 plt.legend()
 plt.show()
-#Test 
-#Je refais une tentative de commit, faudrait que ça commit
-# TESTY TEST TEST TEST TEST
+
+#j)
+from regfreqA import regfreqA
+from regfreqB import regfreqB
+
+bA5 = regfreqA(X, 5)
+bB5 = regfreqB(X, 5)
+bA15 = regfreqA(X, 15)
+bB15 = regfreqA(X, 15)
+
+def fourier(valeurs_x, beta, k):
+    resultat = beta[0] * np.ones_like(valeurs_x)
+    for i in range(1, k):
+        resultat += beta[i] * np.cos(i * valeurs_x)
+    for i in range(k, 2*k-1):
+        resultat += beta[i] * np.sin((i-k+1) * valeurs_x)
+    return resultat
+ 
+xx = np.linspace(1,6)
+
+plt.figure()
+plt.scatter(x, y, s=3, label='Données')
+plt.plot(xx, fourier(xx, bA5, 5), label="Régression de Fourier A, k = 5", color='blue', linewidth=3)
+plt.plot(xx, fourier(xx, bB5, 5), label="Régression de Fourier B, k = 5", color='red', linewidth=1)
+plt.plot(xx, fourier(xx, bA15, 15), label="Régression de Fourier A, k = 15", color='coral', linewidth=3)
+plt.plot(xx, fourier(xx, bB15, 15), label="Régression de Fourier B, k = 15", color='lime', linewidth=1)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Figure 4:\n Approches A et B de la régression de Fourier")
+plt.legend()
+plt.show()

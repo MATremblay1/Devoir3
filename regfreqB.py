@@ -26,6 +26,6 @@ def regfreqB(X, k) :
     Q, R = qr(A, mode='economic')
     beta = solve(R,Q.T@y)
 
-    print(f"Norme du residu ||F(beta)|| = ||A*beta - y|| = {norm(A@beta-y)}")
+    print(f"Norme du residu B ||F(beta)|| = ||A*beta - y|| = {norm(A@beta-y)}")
 
     return beta

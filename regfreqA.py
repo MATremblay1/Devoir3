@@ -28,6 +28,6 @@ def regfreqA(X, k) :
     z = solve(L,A.T@y)
     beta = solve(U,z)
 
-    print(f"Norme du residu ||F(beta)|| = ||A*beta - y|| = {norm(A@beta-y)}")
+    print(f"Norme du residu A ||F(beta)|| = ||A*beta - y|| = {norm(A@beta-y)}")
 
     return beta
