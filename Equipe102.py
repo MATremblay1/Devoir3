@@ -81,3 +81,5 @@ plt.ylabel("y")
 plt.title("Figure 3: Régression non-linéaire avec Newton")
 plt.legend()
 plt.show()
+
+#j)
