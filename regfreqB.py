@@ -24,6 +24,7 @@ def regfreqB(X, k) :
 
     # Resolution du systeme rectangulaire (approche B)
     Q, R = qr(A, mode='economic')
+    print("Conditionnement de R (k =" + str(k) + ") : " + str(np.linalg.cond(R)))
     beta = solve(R,Q.T@y)
 
     print(f"Norme du residu B ||F(beta)|| = ||A*beta - y|| = {norm(A@beta-y)}")

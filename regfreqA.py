@@ -24,6 +24,7 @@ def regfreqA(X, k) :
 
     # Resolution du systeme rectangulaire (approche A)
     AtA = A.T@A
+    print("Conditionnement de A^T A (k =" + str(k) + "): " + str(np.linalg.cond(AtA)))
     L, U = lu(AtA, permute_l=True)
     z = solve(L,A.T@y)
     beta = solve(U,z)

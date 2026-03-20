@@ -90,7 +90,7 @@ from regfreqB import regfreqB
 bA5 = regfreqA(X, 5)
 bB5 = regfreqB(X, 5)
 bA15 = regfreqA(X, 15)
-bB15 = regfreqA(X, 15)
+bB15 = regfreqB(X, 15)
 
 def fourier(valeurs_x, beta, k):
     resultat = beta[0] * np.ones_like(valeurs_x)
@@ -113,3 +113,5 @@ plt.ylabel("y")
 plt.title("Figure 4:\n Approches A et B de la régression de Fourier")
 plt.legend()
 plt.show()
+
+#k)
