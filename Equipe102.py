@@ -115,3 +115,27 @@ plt.legend()
 plt.show()
 
 #k)
+n = 1000
+t= time()
+for i in range(n):
+    regfreqA(X, 5)
+
+
+t= time()
+for i in range(n):
+    regfreqB(X, 5)
+
+t= time()
+for i in range(n):
+    regfreqA(X, 15)
+
+
+t= time()
+for i in range(n):
+    regfreqB(X, 15)
+
+
+print("Temps moyen regfreqA k = 5: " + str((time() - t)/n) + "s")
+print("Temps moyen regfreqB k = 5: " + str((time() - t)/n) + "s")
+print("Temps moyen regfreqA k = 15: " + str((time() - t)/n) + "s")
+print("Temps moyen regfreqB k = 15: " + str((time() - t)/n) + "s")
